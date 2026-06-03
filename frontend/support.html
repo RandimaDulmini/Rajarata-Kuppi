@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support — Rajarata Kuppi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+<nav id="sidebar">
+<div class="sb-logo">
+<div class="logo-row">
+<div class="avatar">RK</div>
+<div>
+<div class="brand">Rajarata Kuppi</div>
+<div class="sub">FMS · RUSL, Mihintale</div>
+</div>
+</div>
+</div>
+<div class="sb-nav">
+<div class="nav-section">
+<div class="nav-label">Main</div>
+<a class="nav-item" href="index.html">
+<span class="icon"></span> Home
+      </a>
+<a class="nav-item" href="student-material.html">
+<span class="icon"></span> Student Material
+      </a>
+<a class="nav-item" href="modules.html">
+<span class="icon"></span> Modules
+      </a>
+<a class="nav-item" href="notes.html">
+<span class="icon"></span> Notes
+      </a>
+<a class="nav-item" href="profile.html">
+<span class="icon"></span> Student Profile
+      </a>
+<a class="nav-item" href="pastpapers.html">
+<span class="icon"></span> Past Papers
+      </a>
+<a class="nav-item" href="notifications.html" id="nav-notif">
+<span class="icon"></span> Notifications
+        <span id="notif-dot" style="margin-left:auto;background:#e8a020;color:#0f1e3c;font-size:10px;font-weight:800;border-radius:20px;padding:1px 7px;">3</span>
+</a>
+</div>
+<div class="nav-section">
+<div class="nav-label">Tools</div>
+<a class="nav-item" href="gpa.html">
+<span class="icon"></span> GPA Calculator
+      </a>
+<a class="nav-item" href="forum.html">
+<span class="icon"></span> Forum
+      </a>
+<a class="nav-item active" href="support.html">
+<span class="icon"></span> Support
+      </a>
+</div>
+</div>
+<div class="sb-footer">
+    Faculty of Management Studies<br/>
+    Rajarata University of Sri Lanka
+  </div>
+</nav>
+<div id="main">
+<div class="topbar">
+<div class="topbar-title" id="topbar-title">Support</div>
+<div class="topbar-right">
+<a href="login.html" class="topbar-badge topbar-action" id="topbar-login">Login</a>
+<a href="signup.html" class="topbar-badge topbar-action" id="topbar-signup">Sign Up</a>
+<div class="topbar-badge">FMS Student</div>
+<div class="topbar-profile" id="topbar-profile">
+<button class="topbar-avatar" id="topbar-avatar" type="button">ST</button>
+<div class="topbar-menu" id="topbar-menu">
+<a href="profile.html">Profile</a>
+<button type="button" onclick="logoutUser()">Log out</button>
+</div>
+</div>
+</div>
+</div>
+<div class="page active" id="page-support">
+<div class="page-header">
+<h1>Support Center</h1>
+<p>Find answers to common questions or reach out to the Rajarata Kuppi team.</p>
+</div>
+<div class="support-layout">
+<div>
+<div class="sec-title">Frequently Asked Questions</div>
+<div class="faq-list">
+<div class="faq-item" onclick="toggleFAQ(this)">
+<div class="faq-q">How can I improve my GPA? <span class="chevron">▼</span></div>
+<div class="faq-a"><div class="faq-a-inner">Focus on your weaker modules first — use the GPA Calculator to identify which subjects drag your average down the most. Attend tutorials, download lecture notes from the Student Material section, and review past papers. Consistent study habits and early exam preparation make the biggest difference. You can also join study groups via the Forum.</div></div>
+</div>
+<div class="faq-item" onclick="toggleFAQ(this)">
+<div class="faq-q">How to upload lecture notes? <span class="chevron">▼</span></div>
+<div class="faq-a"><div class="faq-a-inner">Go to Student Material → select the correct tab (PPT, Lecture Notes or Tutorial) → scroll down to the Upload Zone at the bottom of that section → click "Choose File to Upload". Supported formats: PDF, DOC, DOCX, PPT, PPTX. Files are reviewed by moderators before publishing. You'll get a notification once approved.</div></div>
+</div>
+<div class="faq-item" onclick="toggleFAQ(this)">
+<div class="faq-q">Where can I download study materials? <span class="chevron">▼</span></div>
+<div class="faq-a"><div class="faq-a-inner">All materials are under Student Material in the sidebar. Click the PPT, Lecture Notes, or Tutorial tab to filter by type. Each card has a Download button. You can also find resources on the Home page under Latest Lecture Notes, Quick Revision Notes, and Recently Added Resources.</div></div>
+</div>
+<div class="faq-item" onclick="toggleFAQ(this)">
+<div class="faq-q">How is GPA calculated at RUSL? <span class="chevron">▼</span></div>
+<div class="faq-a"><div class="faq-a-inner">GPA = Total Grade Points ÷ Total Credits. Each grade maps to a grade point (A/A+ = 4.0, A− = 3.7, B+ = 3.3, etc.). For each module, multiply grade points × credits. Sum all results to get Total Grade Points, then divide by the total number of credits. Use our GPA Calculator to do this automatically.</div></div>
+</div>
+<div class="faq-item" onclick="toggleFAQ(this)">
+<div class="faq-q">How do I find materials for my department? <span class="chevron">▼</span></div>
+<div class="faq-a"><div class="faq-a-inner">Visit Modules in the sidebar to browse by department. Each department card (ITM, ACF, MGT, HRM, MKT, THM) shows degree type and credits. Materials are tagged with department codes — you can quickly identify ITM, ACF, HRM etc. from the coloured badges on each resource card.</div></div>
+</div>
+<div class="faq-item" onclick="toggleFAQ(this)">
+<div class="faq-q">How do I contact the support team? <span class="chevron">▼</span></div>
+<div class="faq-a"><div class="faq-a-inner">You can email support@rajaratakuppi.lk or call +94 77 123 4567 during office hours (Mon–Fri, 8:30 AM – 4:30 PM). You can also use the contact form on this page and the team will respond within 24 hours.</div></div>
+</div>
+</div>
+</div>
+<div>
+<div class="support-box">
+<h3> Contact Us</h3>
+<div class="contact-item">
+<span class="ci-icon"></span>
+<div><div class="ci-label">Email</div><div class="ci-val">support@rajaratakuppi.lk</div></div>
+</div>
+<div class="contact-item">
+<span class="ci-icon"></span>
+<div><div class="ci-label">Phone</div><div class="ci-val">+94 77 123 4567</div></div>
+</div>
+<div class="contact-item">
+<span class="ci-icon"></span>
+<div><div class="ci-label">Office Hours</div><div class="ci-val">Mon–Fri, 8:30 AM – 4:30 PM</div></div>
+</div>
+<div class="contact-item">
+<span class="ci-icon"></span>
+<div><div class="ci-label">Location</div><div class="ci-val">FMS, RUSL, Mihintale</div></div>
+</div>
+<div class="contact-form">
+<h4>Send a Message</h4>
+<div class="form-group">
+<label>Your Name</label>
+<input placeholder="e.g. Saman Perera" type="text"/>
+</div>
+<div class="form-group">
+<label>Email</label>
+<input placeholder="you@example.com" type="email"/>
+</div>
+<div class="form-group">
+<label>Topic</label>
+<select>
+<option>Technical Issue</option>
+<option>Missing Materials</option>
+<option>GPA Query</option>
+<option>Account Problem</option>
+<option>Other</option>
+</select>
+</div>
+<div class="form-group">
+<label>Message</label>
+<textarea placeholder="Describe your issue or question…" rows="4"></textarea>
+</div>
+<button class="btn-send" onclick="alert('Message sent! We will respond within 24 hours.')">Send Message</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/api.js"></script>
+</body>
+</html>

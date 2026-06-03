@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Profile — Rajarata Kuppi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+<nav id="sidebar">
+<div class="sb-logo">
+<div class="logo-row">
+<div class="avatar">RK</div>
+<div>
+<div class="brand">Rajarata Kuppi</div>
+<div class="sub">FMS · RUSL, Mihintale</div>
+</div>
+</div>
+</div>
+<div class="sb-nav">
+<div class="nav-section">
+<div class="nav-label">Main</div>
+<a class="nav-item" href="index.html">
+<span class="icon"></span> Home
+      </a>
+<a class="nav-item" href="student-material.html">
+<span class="icon"></span> Student Material
+      </a>
+<a class="nav-item" href="modules.html">
+<span class="icon"></span> Modules
+      </a>
+<a class="nav-item" href="notes.html">
+<span class="icon"></span> Notes
+      </a>
+<a class="nav-item active" href="profile.html">
+<span class="icon"></span> Student Profile
+      </a>
+<a class="nav-item" href="pastpapers.html">
+<span class="icon"></span> Past Papers
+      </a>
+<a class="nav-item" href="notifications.html" id="nav-notif">
+<span class="icon"></span> Notifications
+        <span id="notif-dot" style="margin-left:auto;background:#e8a020;color:#0f1e3c;font-size:10px;font-weight:800;border-radius:20px;padding:1px 7px;">3</span>
+</a>
+</div>
+<div class="nav-section">
+<div class="nav-label">Tools</div>
+<a class="nav-item" href="gpa.html">
+<span class="icon"></span> GPA Calculator
+      </a>
+<a class="nav-item" href="forum.html">
+<span class="icon"></span> Forum
+      </a>
+<a class="nav-item" href="support.html">
+<span class="icon"></span> Support
+      </a>
+</div>
+</div>
+<div class="sb-footer">
+    Faculty of Management Studies<br/>
+    Rajarata University of Sri Lanka
+  </div>
+</nav>
+<div id="main">
+<div class="topbar">
+<div class="topbar-title" id="topbar-title">Student Profile</div>
+<div class="topbar-right">
+<a href="login.html" class="topbar-badge topbar-action" id="topbar-login">Login</a>
+<a href="signup.html" class="topbar-badge topbar-action" id="topbar-signup">Sign Up</a>
+<div class="topbar-badge">FMS Student</div>
+<div class="topbar-profile" id="topbar-profile">
+<button class="topbar-avatar" id="topbar-avatar" type="button">ST</button>
+<div class="topbar-menu" id="topbar-menu">
+<a href="profile.html">Profile</a>
+<button type="button" onclick="logoutUser()">Log out</button>
+</div>
+</div>
+</div>
+</div>
+<div class="page active" id="page-profile">
+<div class="page-header">
+<h1>Student Profile</h1>
+<p>Your personal academic information and settings.</p>
+</div>
+<div style="display:grid;grid-template-columns:300px 1fr;gap:24px;align-items:start">
+<!-- Profile Card -->
+<div style="background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:28px;text-align:center">
+<div id="profile-avatar" style="width:88px;height:88px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--gold));display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:800;color:var(--navy);margin:0 auto 16px">ST</div>
+<div id="profile-name" style="font-size:18px;font-weight:800;color:var(--navy);margin-bottom:4px">S. Tharaka</div>
+<div id="profile-reg" style="font-size:12px;color:var(--muted);margin-bottom:16px">REG No: 2021/MIS/001</div>
+<div id="profile-degree" style="background:var(--light);border-radius:10px;padding:10px;font-size:12px;color:var(--navy);font-weight:600;margin-bottom:8px">BScHons in Information Systems</div>
+<div id="profile-meta" style="font-size:11px;color:var(--muted);margin-bottom:20px">Year III · Semester I · FMS, RUSL</div>
+<button class="btn-calc" id="edit-profile-btn" style="width:100%;font-size:13px;padding:10px" type="button">✏️ Edit Profile</button>
+</div>
+<!-- Details -->
+<div style="display:flex;flex-direction:column;gap:18px">
+<!-- Edit Profile -->
+<div class="profile-edit" id="profile-edit-card" style="background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:24px">
+<div class="sec-title">Edit Profile</div>
+<div id="profile-edit-error" class="form-error hidden"></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+<div class="form-group"><label for="edit-name">Full Name</label><input id="edit-name" type="text" placeholder="Full name" /></div>
+<div class="form-group"><label for="edit-reg-no">Registration No</label><input id="edit-reg-no" type="text" placeholder="2021/MIS/001" /></div>
+<div class="form-group"><label for="edit-department">Department</label>
+      <select id="edit-department">
+            <option value="">Select your department</option>
+            <option value="Accountancy and Finance">Accountancy and Finance</option>
+            <option value="Business Management">Business Management</option>
+            <option value="Human Resource Management">Human Resource Management</option>
+            <option value="Information Systems">Information Systems</option>
+            <option value="Marketing Management">Marketing Management</option>
+            <option value="Tourism and Hospitality Management">Tourism and Hospitality Management</option>
+      </select>
+</div>
+<div class="form-group"><label for="edit-gpa">Current GPA</label><input id="edit-gpa" type="text" placeholder="3.45" /></div>
+</div>
+<div class="profile-actions">
+<button class="btn-calc" id="profile-save-btn" type="button">Save Changes</button>
+<button class="btn-reset" id="profile-cancel-btn" type="button">Cancel</button>
+</div>
+</div>
+<!-- Academic Info -->
+<div style="background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:24px">
+<div class="sec-title">Academic Information</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+<div style="background:var(--light);border-radius:10px;padding:14px"><div style="font-size:10px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">Department</div><div id="profile-department" style="font-size:13.5px;font-weight:700;color:var(--navy)">Information Systems</div></div>
+<div style="background:var(--light);border-radius:10px;padding:14px"><div style="font-size:10px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">Total Credits</div><div id="profile-credits" style="font-size:13.5px;font-weight:700;color:var(--navy)">125 Credits</div></div>
+<div style="background:var(--light);border-radius:10px;padding:14px"><div style="font-size:10px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">Current GPA</div><div id="profile-gpa" style="font-size:13.5px;font-weight:700;color:var(--accent)">3.45</div></div>
+</div>
+</div>
+<!-- Contact Info -->
+<div style="background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:24px">
+<div class="sec-title">Contact Information</div>
+<div style="display:flex;flex-direction:column;gap:10px">
+<div class="contact-item"><span class="ci-icon"></span><div><div class="ci-label">University Email</div><div class="ci-val">s.tharaka@stu.rusl.ac.lk</div></div></div>
+<div class="contact-item"><span class="ci-icon"></span><div><div class="ci-label">Mobile</div><div class="ci-val">+94 77 000 0000</div></div></div>
+<div class="contact-item"><span class="ci-icon"></span><div><div class="ci-label">Address</div><div class="ci-val">Mihintale, Anuradhapura, Sri Lanka</div></div></div>
+</div>
+</div>
+<!-- Enrolled Modules -->
+<div style="background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:24px">
+<div class="sec-title">Enrolled Modules</div>
+<div class="notes-list" id="enrolled-modules-list" style="gap:10px"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/api.js"></script>
+<div id="toast-container"></div>
+</body>
+</html>

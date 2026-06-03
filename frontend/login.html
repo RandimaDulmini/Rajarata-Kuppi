@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login — Rajarata Kuppi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <div class="login-wrap">
+    <div class="login-card">
+      <h1>Rajarata Kuppi Login</h1>
+      <p>Use the demo student or admin account to test protected backend features like posting forum questions and admin uploads.</p>
+      <input id="email" type="email" value="student@rajaratakuppi.lk" placeholder="Email" />
+      <input id="password" type="password" value="student123" placeholder="Password" />
+      <button onclick="doLogin()">Login</button>
+      <span class="api-pill">Backend: http://127.0.0.1:8000</span>
+      <p style="margin-top:14px">Admin: admin@rajaratakuppi.lk / admin123<br>Student: student@rajaratakuppi.lk / student123</p>
+      <p><a href="signup.html">Create an account</a> · <a href="index.html">Back to Home</a></p>
+    </div>
+  </div>
+  <script src="assets/js/api.js"></script>
+  <script>
+    async function doLogin(){
+      try{
+        await loginUser(document.getElementById('email').value, document.getElementById('password').value);
+        location.href = 'index.html';
+      }catch(err){ alert(err.message); }
+    }
+  </script>
+</body>
+</html>

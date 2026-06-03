@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up — Rajarata Kuppi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <div class="login-wrap">
+    <div class="login-card">
+      <h1>Create your account</h1>
+      <p>Sign up to access student features like forum posts and downloads.</p>
+      <input id="name" type="text" placeholder="Full name" />
+      <input id="email" type="email" placeholder="Email" />
+      <input id="password" type="password" placeholder="Password (min 6 chars)" />
+      <input id="reg-no" type="text" placeholder="Registration number (optional)" />
+      <select id="department" style="width:100%;padding:12px 14px;border:1px solid #dde3ef;border-radius:10px;margin-bottom:10px;font-family:'Sora',sans-serif;color:var(--navy)">
+        <option value="">Select your department</option>
+        <option value="Accountancy and Finance">Accountancy and Finance</option>
+        <option value="Business Management">Business Management</option>
+        <option value="Human Resource Management">Human Resource Management</option>
+        <option value="Information Systems">Information Systems</option>
+        <option value="Marketing Management">Marketing Management</option>
+        <option value="Tourism and Hospitality Management">Tourism and Hospitality Management</option>
+      </select>
+      <div id="signup-error" class="form-error hidden"></div>
+      <button id="signup-btn" onclick="doSignup()">Sign Up</button>
+      <span class="api-pill">Backend: http://127.0.0.1:8000</span>
+      <p style="margin-top:14px"><a href="login.html">Already have an account? Login</a></p>
+    </div>
+  </div>
+  <script src="assets/js/api.js"></script>
+  <script>
+    function cleanValue(value){
+      const trimmed = String(value || '').trim();
+      return trimmed ? trimmed : undefined;
+    }
+
+    function setSignupError(message){
+      const box = document.getElementById('signup-error');
+      if(!box) return;
+      if(message){
+        box.textContent = message;
+        box.classList.remove('hidden');
+      }else{
+        box.textContent = '';
+        box.classList.add('hidden');
+      }
+    }
+
+    function isValidEmail(value){
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+    }
+
+    async function doSignup(){
+      setSignupError('');
+      const name = cleanValue(document.getElementById('name').value);
+      const email = cleanValue(document.getElementById('email').value);
+      const password = document.getElementById('password').value;
+      if(!name){ setSignupError('Please enter your full name.'); return; }
+      if(!email || !isValidEmail(email)){ setSignupError('Please enter a valid email address.'); return; }
+      if(!password || password.length < 6){ setSignupError('Password must be at least 6 characters.'); return; }
+      const department = cleanValue(document.getElementById('department').value);
+      if(!department){ setSignupError('Please select your department.'); return; }
+
+      const payload = {
+        name,
+        email,
+        password,
+        reg_no: cleanValue(document.getElementById('reg-no').value),
+        department,
+        department_code: undefined,
+        year: undefined,
+        semester: undefined
+      };
+      const btn = document.getElementById('signup-btn');
+      if(btn) btn.disabled = true;
+      try{
+        await registerUser(payload);
+        await loginUser(email, password);
+        location.href = 'index.html';
+      }catch(err){
+        setSignupError(err.message);
+      }finally{
+        if(btn) btn.disabled = false;
+      }
+    }
+  </script>
+</body>
+</html>

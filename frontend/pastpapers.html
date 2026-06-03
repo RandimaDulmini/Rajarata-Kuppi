@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Past Papers — Rajarata Kuppi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+<nav id="sidebar">
+<div class="sb-logo">
+<div class="logo-row">
+<div class="avatar">RK</div>
+<div>
+<div class="brand">Rajarata Kuppi</div>
+<div class="sub">FMS · RUSL, Mihintale</div>
+</div>
+</div>
+</div>
+<div class="sb-nav">
+<div class="nav-section">
+<div class="nav-label">Main</div>
+<a class="nav-item" href="index.html">
+<span class="icon"></span> Home
+      </a>
+<a class="nav-item" href="student-material.html">
+<span class="icon"></span> Student Material
+      </a>
+<a class="nav-item" href="modules.html">
+<span class="icon"></span> Modules
+      </a>
+<a class="nav-item" href="notes.html">
+<span class="icon"></span> Notes
+      </a>
+<a class="nav-item" href="profile.html">
+<span class="icon"></span> Student Profile
+      </a>
+<a class="nav-item active" href="pastpapers.html">
+<span class="icon"></span> Past Papers
+      </a>
+<a class="nav-item" href="notifications.html" id="nav-notif">
+<span class="icon"></span> Notifications
+        <span id="notif-dot" style="margin-left:auto;background:#e8a020;color:#0f1e3c;font-size:10px;font-weight:800;border-radius:20px;padding:1px 7px;">3</span>
+</a>
+</div>
+<div class="nav-section">
+<div class="nav-label">Tools</div>
+<a class="nav-item" href="gpa.html">
+<span class="icon"></span> GPA Calculator
+      </a>
+<a class="nav-item" href="forum.html">
+<span class="icon"></span> Forum
+      </a>
+<a class="nav-item" href="support.html">
+<span class="icon"></span> Support
+      </a>
+</div>
+</div>
+<div class="sb-footer">
+    Faculty of Management Studies<br/>
+    Rajarata University of Sri Lanka
+  </div>
+</nav>
+<div id="main">
+<div class="topbar">
+<div class="topbar-title" id="topbar-title">Past Papers</div>
+<div class="topbar-right">
+<a href="login.html" class="topbar-badge topbar-action" id="topbar-login">Login</a>
+<a href="signup.html" class="topbar-badge topbar-action" id="topbar-signup">Sign Up</a>
+<div class="topbar-badge">FMS Student</div>
+<div class="topbar-profile" id="topbar-profile">
+<button class="topbar-avatar" id="topbar-avatar" type="button">ST</button>
+<div class="topbar-menu" id="topbar-menu">
+<a href="profile.html">Profile</a>
+<button type="button" onclick="logoutUser()">Log out</button>
+</div>
+</div>
+</div>
+</div>
+<div class="page active" id="page-pastpapers">
+<div class="page-header">
+<h1>Past Papers</h1>
+<p>Download previous exam papers to practice and prepare effectively.</p>
+</div>
+<!-- Upload Resource Modal (for past papers) -->
+<div id="upload-resource-modal" class="modal" style="display:none">
+      <div class="modal-content">
+            <h3>Upload Past Paper</h3>
+            <div class="form-group"><input id="res-title" placeholder="Title"></div>
+            <div class="form-group"><select id="res-module"><option value="">Select module</option></select></div>
+            <div class="form-group"><input id="res-dept" placeholder="Department code (e.g. ITM)"></div>
+            <div class="form-group"><input id="res-type" placeholder="Resource type (pastpaper)" value="pastpaper"></div>
+            <div class="form-group"><textarea id="res-desc" placeholder="Description"></textarea></div>
+            <div class="form-group"><input id="res-file" type="file"></div>
+            <div style="display:flex;gap:8px"><button id="upload-res-btn" class="btn-enroll">Upload</button><button id="cancel-upload-res" class="btn-enroll">Cancel</button></div>
+      </div>
+</div>
+<!-- Filter Bar -->
+<div style="background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 22px;margin-bottom:24px;display:flex;gap:14px;flex-wrap:wrap;align-items:center">
+<span style="font-size:13px;font-weight:700;color:var(--navy)">Filter:</span>
+<select onchange="filterPapers(this.value)" style="border:1.5px solid #d0d8e8;border-radius:8px;padding:7px 14px;font-size:13px;font-family:'Sora',sans-serif;outline:none;color:var(--navy)">
+<option value="all">All Departments</option>
+<option value="ITM">ITM — Information Systems</option>
+<option value="ACF">ACF — Accountancy &amp; Finance</option>
+<option value="MGT">MGT — Business Management</option>
+<option value="HRM">HRM — Human Resource Mgmt.</option>
+<option value="MKT">MKT — Marketing</option>
+<option value="THM">THM — Tourism &amp; Hospitality</option>
+</select>
+<select style="border:1.5px solid #d0d8e8;border-radius:8px;padding:7px 14px;font-size:13px;font-family:'Sora',sans-serif;outline:none;color:var(--navy)">
+<option>All Years</option>
+<option>Year I</option>
+<option>Year II</option>
+<option>Year III</option>
+<option>Year IV</option>
+</select>
+<select style="border:1.5px solid #d0d8e8;border-radius:8px;padding:7px 14px;font-size:13px;font-family:'Sora',sans-serif;outline:none;color:var(--navy)">
+<option>All Exam Years</option>
+<option>2024</option>
+<option>2023</option>
+<option>2022</option>
+<option>2021</option>
+<option>2020</option>
+</select>
+</div>
+<div class="notes-list" id="papers-list">
+<div class="note-card" data-dept="ITM"><div class="note-badge itm">ITM<br/><span style="font-size:8px">2024</span></div><div class="note-body"><div class="note-title">ITM 3133 — Enterprise Architecture · Final Exam 2024</div><div class="note-desc">Year III Sem I final examination paper with all sections. Duration: 3 hours.</div><div class="note-meta"><span class="tag">ITM</span><span class="tag">Year III</span><span class="tag">2024</span><span class="tag">Final Exam</span></div></div><button class="btn-dl">⬇ Download</button></div>
+<div class="note-card" data-dept="ITM"><div class="note-badge itm">ITM<br/><span style="font-size:8px">2023</span></div><div class="note-body"><div class="note-title">ITM 2123 — Database Management Systems · Final Exam 2023</div><div class="note-desc">Year II Sem I final examination paper. SQL, ER diagrams, normalisation questions.</div><div class="note-meta"><span class="tag">ITM</span><span class="tag">Year II</span><span class="tag">2023</span><span class="tag">Final Exam</span></div></div><button class="btn-dl">⬇ Download</button></div>
+<div class="note-card" data-dept="ACF"><div class="note-badge acf">ACF<br/><span style="font-size:8px">2024</span></div><div class="note-body"><div class="note-title">ACF 3113 — Investment &amp; Portfolio Management · Final Exam 2024</div><div class="note-desc">Year III Sem I paper covering portfolio theory, risk-return trade-off, asset pricing.</div><div class="note-meta"><span class="tag">ACF</span><span class="tag">Year III</span><span class="tag">2024</span><span class="tag">Final Exam</span></div></div><button class="btn-dl">⬇ Download</button></div>
+<div class="note-card" data-dept="ACF"><div class="note-badge acf">ACF<br/><span style="font-size:8px">2023</span></div><div class="note-body"><div class="note-title">ACF 1133 — Financial Accounting · Mid Exam 2023</div><div class="note-desc">Year I Sem I mid-semester paper. Journal entries, trial balance and financial statements.</div><div class="note-meta"><span class="tag">ACF</span><span class="tag">Year I</span><span class="tag">2023</span><span class="tag">Mid Exam</span></div></div><button class="btn-dl">⬇ Download</button></div>
+<div class="note-card" data-dept="HRM"><div class="note-badge hrm">HRM<br/><span style="font-size:8px">2024</span></div><div class="note-body"><div class="note-title">HRM 3113 — Employment Law &amp; Industrial Relations · Final Exam 2024</div><div class="note-desc">Year III Sem I paper on Sri Lanka labour law, disputes, trade union legislation.</div><div class="note-meta"><span class="tag">HRM</span><span class="tag">Year III</span><span class="tag">2024</span><span class="tag">Final Exam</span></div></div><button class="btn-dl">⬇ Download</button></div>
+<div class="note-card" data-dept="MGT"><div class="note-badge mgt">MGT<br/><span style="font-size:8px">2024</span></div><div class="note-body"><div class="note-title">MGT 3243 — Strategic Management · Final Exam 2024</div><div class="note-desc">Year III Sem II paper covering SWOT, Porter's Five Forces, Balanced Scorecard.</div><div class="note-meta"><span class="tag">MGT</span><span class="tag">Year III</span><span class="tag">2024</span><span class="tag">Final Exam</span></div></div><button class="btn-dl">⬇ Download</button></div>
+<div class="note-card" data-dept="MKT"><div class="note-badge mkt">MKT<br/><span style="font-size:8px">2023</span></div><div class="note-body"><div class="note-title">MKT 1123 — Fundamentals of Marketing · Final Exam 2023</div><div class="note-desc">Year I Sem I paper on 4Ps, segmentation, consumer behaviour, product life cycle.</div><div class="note-meta"><span class="tag">MKT</span><span class="tag">Year I</span><span class="tag">2023</span><span class="tag">Final Exam</span></div></div><button class="btn-dl">⬇ Download</button></div>
+<div class="note-card" data-dept="THM"><div class="note-badge thm">THM<br/><span style="font-size:8px">2024</span></div><div class="note-body"><div class="note-title">THM 11023 — Intro to Tourism &amp; Hospitality · Final Exam 2024</div><div class="note-desc">Year I Sem I paper on tourism types, hospitality sectors, Sri Lanka tourism overview.</div><div class="note-meta"><span class="tag">THM</span><span class="tag">Year I</span><span class="tag">2024</span><span class="tag">Final Exam</span></div></div><button class="btn-dl">⬇ Download</button></div>
+</div>
+</div>
+</div>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/api.js"></script>
+</body>
+</html>

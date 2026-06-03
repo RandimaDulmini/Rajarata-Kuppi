@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+*.so
+.Python
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# FastAPI / app runtime files
+backend/rajarata_kuppi.db
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# Environment variables
+.env
+backend/.env
+
+# Test / coverage / tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Editor / OS files
+.vscode/
+.idea/
+Thumbs.db
+Desktop.ini
+.DS_Store

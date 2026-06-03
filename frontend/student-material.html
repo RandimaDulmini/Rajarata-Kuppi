@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Material — Rajarata Kuppi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+<nav id="sidebar">
+<div class="sb-logo">
+<div class="logo-row">
+<div class="avatar">RK</div>
+<div>
+<div class="brand">Rajarata Kuppi</div>
+<div class="sub">FMS · RUSL, Mihintale</div>
+</div>
+</div>
+</div>
+<div class="sb-nav">
+<div class="nav-section">
+<div class="nav-label">Main</div>
+<a class="nav-item" href="index.html">
+<span class="icon"></span> Home
+      </a>
+<a class="nav-item active" href="student-material.html">
+<span class="icon"></span> Student Material
+      </a>
+<a class="nav-item" href="modules.html">
+<span class="icon"></span> Modules
+      </a>
+<a class="nav-item" href="notes.html">
+<span class="icon"></span> Notes
+      </a>
+<a class="nav-item" href="profile.html">
+<span class="icon"></span> Student Profile
+      </a>
+<a class="nav-item" href="pastpapers.html">
+<span class="icon"></span> Past Papers
+      </a>
+<a class="nav-item" href="notifications.html" id="nav-notif">
+<span class="icon"></span> Notifications
+        <span id="notif-dot" style="margin-left:auto;background:#e8a020;color:#0f1e3c;font-size:10px;font-weight:800;border-radius:20px;padding:1px 7px;">3</span>
+</a>
+</div>
+<div class="nav-section">
+<div class="nav-label">Tools</div>
+<a class="nav-item" href="gpa.html">
+<span class="icon"></span> GPA Calculator
+      </a>
+<a class="nav-item" href="forum.html">
+<span class="icon"></span> Forum
+      </a>
+<a class="nav-item" href="support.html">
+<span class="icon"></span> Support
+      </a>
+</div>
+</div>
+<div class="sb-footer">
+    Faculty of Management Studies<br/>
+    Rajarata University of Sri Lanka
+  </div>
+</nav>
+<div id="main">
+<div class="topbar">
+<div class="topbar-title" id="topbar-title">Student Material</div>
+<div class="topbar-right">
+<a href="login.html" class="topbar-badge topbar-action" id="topbar-login">Login</a>
+<a href="signup.html" class="topbar-badge topbar-action" id="topbar-signup">Sign Up</a>
+<div class="topbar-badge">FMS Student</div>
+<div class="topbar-profile" id="topbar-profile">
+<button class="topbar-avatar" id="topbar-avatar" type="button">ST</button>
+<div class="topbar-menu" id="topbar-menu">
+<a href="profile.html">Profile</a>
+<button type="button" onclick="logoutUser()">Log out</button>
+</div>
+</div>
+</div>
+</div>
+<div class="page active" id="page-student-material">
+<div class="page-header">
+<h1>Student Material</h1>
+<p>Access PPT presentations, lecture notes, and tutorial resources by subject.</p>
+</div>
+<div class="mat-tabs">
+<div class="mat-tab active" onclick="showTab('ppt',this)"> PPT Presentations</div>
+<div class="mat-tab" onclick="showTab('lecture',this)"> Lecture Notes</div>
+<div class="mat-tab" onclick="showTab('tutorial',this)"> Tutorials</div>
+</div>
+<!-- PPT -->
+<div class="mat-panel active" id="mat-ppt">
+<div class="mat-grid">
+<div class="mat-card">
+<div class="mat-card-head">
+<div class="mat-icon ppt"></div>
+<div><div class="mat-card-title">Management Information Systems</div><div class="mat-card-sub">ITM 2133 · Year II Sem I · 3 Credits<br/>Slides covering MIS concepts, DSS, ERP systems and organisational impact.</div></div>
+</div>
+<div class="mat-card-foot"><div class="mat-tags"><span class="mat-tag ppt">PPT</span><span class="mat-tag">ITM</span></div><button class="btn-dl">⬇ Download</button></div>
+</div>
+<div class="mat-card">
+<div class="mat-card-head">
+<div class="mat-icon ppt"></div>
+<div><div class="mat-card-title">Strategic Management</div><div class="mat-card-sub">MGT 3243 · Year III Sem II · 3 Credits<br/>SWOT, Porter's Five Forces, Balanced Scorecard and strategy implementation slides.</div></div>
+</div>
+<div class="mat-card-foot"><div class="mat-tags"><span class="mat-tag ppt">PPT</span><span class="mat-tag">MGT</span></div><button class="btn-dl">⬇ Download</button></div>
+</div>
+<div class="mat-card">
+<div class="mat-card-head">
+<div class="mat-icon ppt"></div>
+<div><div class="mat-card-title">HRM 3113 — Employment Law</div><div class="mat-card-sub">HRM 3113 · Year III Sem I · 3 Credits<br/>Sri Lanka labour law, trade unions, termination and industrial disputes slides.</div></div>
+</div>
+<div class="mat-card-foot"><div class="mat-tags"><span class="mat-tag ppt">PPT</span><span class="mat-tag">HRM</span></div><button class="btn-dl">⬇ Download</button></div>
+</div>
+<div class="mat-card">
+<div class="mat-card-head">
+<div class="mat-icon ppt"></div>
+<div><div class="mat-card-title">Digital Marketing</div><div class="mat-card-sub">MKT 2123 · Year II Sem I · 3 Credits<br/>SEO, SEM, social media marketing, content strategy and analytics slides.</div></div>
+</div>
+<div class="mat-card-foot"><div class="mat-tags"><span class="mat-tag ppt">PPT</span><span class="mat-tag">MKT</span></div><button class="btn-dl">⬇ Download</button></div>
+</div>
+</div>
+<!-- Upload Zone -->
+<div class="upload-zone" onclick="alert('Upload feature coming soon!')">
+<div class="up-icon"></div>
+<h3>Upload a PPT Presentation</h3>
+<p>Share your slides with fellow FMS students. Supported: .ppt, .pptx</p>
+</div>
+
+<!-- Upload Resource Modal -->
+<div id="upload-resource-modal" class="modal" style="display:none">
+      <div class="modal-content">
+            <h3>Upload Resource</h3>
+            <div class="form-group"><input id="res-title" placeholder="Title"></div>
+            <div class="form-group"><select id="res-module"><option value="">Select module</option></select></div>
+            <div class="form-group"><input id="res-dept" placeholder="Department code (e.g. ITM)"></div>
+            <div class="form-group"><input id="res-type" placeholder="Resource type (ppt, lecture, tutorial, pastpaper, video)"></div>
+            <div class="form-group"><textarea id="res-desc" placeholder="Description"></textarea></div>
+            <div class="form-group"><input id="res-file" type="file"></div>
+            <div style="display:flex;gap:8px"><button id="upload-res-btn" class="btn-enroll">Upload</button><button id="cancel-upload-res" class="btn-enroll">Cancel</button></div>
+      </div>
+</div>
+</div>
+</div>
+<!-- LECTURE NOTES -->
+<div class="mat-panel" id="mat-lecture">
+<div class="mat-grid">
+<div class="mat-card">
+<div class="mat-card-head">
+<div class="mat-icon note"></div>
+<div><div class="mat-card-title">Financial Management</div><div class="mat-card-sub">ACF 2224 · Year II Sem II · 4 Credits<br/>Accounting and finance study materials — capital budgeting, working capital, valuation.</div></div>
+</div>
+<div class="mat-card-foot"><div class="mat-tags"><span class="mat-tag note">PDF</span><span class="mat-tag">ACF</span></div><button class="btn-dl">⬇ Download</button></div>
+</div>
+<div class="mat-card">
+<div class="mat-card-head">
+<div class="mat-icon note"></div>
+<div><div class="mat-card-title">Enterprise Architecture</div><div class="mat-card-sub">ITM 3133 · Year III Sem I · 3 Credits<br/>SOA, EA frameworks, cloud computing, enterprise data models and IT control.</div></div>
+</div>
+<div class="mat-card-foot"><div class="mat-tags"><span class="mat-tag note">PDF</span><span class="mat-tag">ITM</span></div><button class="btn-dl">⬇ Download</button></div>
+</div>
+<div class="mat-card">
+<div class="mat-card-head">
+<div class="mat-icon note"></div>
+<div><div class="mat-card-title">Investment &amp; Portfolio Management</div><div class="mat-card-sub">ACF 3113 · Year III Sem I · 3 Credits<br/>Investment vehicles, portfolio theory, risk-return trade-off, asset pricing models.</div></div>
+</div>
+<div class="mat-card-foot"><div class="mat-tags"><span class="mat-tag note">DOC</span><span class="mat-tag">ACF</span></div><button class="btn-dl">⬇ Download</button></div>
+</div>
+<div class="mat-card">
+<div class="mat-card-head">
+<div class="mat-icon note"></div>
+<div><div class="mat-card-title">IS Security &amp; Risk Management</div><div class="mat-card-sub">ITM 3253 · Year III Sem II · 3 Credits<br/>Cybersecurity, risk frameworks, access control, incident response and compliance.</div></div>
+</div>
+<div class="mat-card-foot"><div class="mat-tags"><span class="mat-tag note">PDF</span><span class="mat-tag">ITM</span><span class="mat-tag note" style="background:#e6ffe6;color:#1e5c3a">New</span></div><button class="btn-dl">⬇ Download</button></div>
+</div>
+</div>
+<div class="upload-zone" onclick="alert('Upload feature coming soon!')">
+<div class="up-icon"></div>
+<h3>Upload Lecture Notes</h3>
+<p>Help your peers — share PDF or DOC lecture notes for any module.</p>
+<button class="btn-upload" onclick="event.stopPropagation();alert('Upload feature coming soon!')">Choose File to Upload</button>
+</div>
+</div>
+<!-- TUTORIALS -->
+<div class="mat-panel" id="mat-tutorial">
+<div class="mat-grid">
+<div class="mat-card">
+<div class="mat-card-head">
+<div class="mat-icon tut"></div>
+<div><div class="mat-card-title">Database Management Systems</div><div class="mat-card-sub">ITM 2123 · Year II Sem I · 3 Credits<br/>SQL queries, ER diagrams, normalisation exercises and past paper solutions.</div></div>
+</div>
+<div class="mat-card-foot"><div class="mat-tags"><span class="mat-tag tut">Tutorial</span><span class="mat-tag">ITM</span></div><button class="btn-dl">⬇ Download</button></div>
+</div>
+<div class="mat-card">
+<div class="mat-card-head">
+<div class="mat-icon tut"></div>
+<div><div class="mat-card-title">Financial Accounting Tutorial</div><div class="mat-card-sub">ACF 1133 · Year I Sem I · 3 Credits<br/>Worked examples: journal entries, trial balance, financial statements preparation.</div></div>
+</div>
+<div class="mat-card-foot"><div class="mat-tags"><span class="mat-tag tut">Tutorial</span><span class="mat-tag">ACF</span></div><button class="btn-dl">⬇ Download</button></div>
+</div>
+<div class="mat-card">
+<div class="mat-card-head">
+<div class="mat-icon tut"></div>
+<div><div class="mat-card-title">Business Mathematics Exercises</div><div class="mat-card-sub">MGT 1143 · Year I Sem I · 3 Credits<br/>Practice problems: matrices, linear equations, differentiation, integration.</div></div>
+</div>
+<div class="mat-card-foot"><div class="mat-tags"><span class="mat-tag tut">Tutorial</span><span class="mat-tag">MGT</span></div><button class="btn-dl">⬇ Download</button></div>
+</div>
+<div class="mat-card">
+<div class="mat-card-head">
+<div class="mat-icon tut"></div>
+<div><div class="mat-card-title">Industrial Relations Video Tutorial</div><div class="mat-card-sub">HRM 3113 · Year III Sem I · 3 Credits<br/>Video walkthrough of labour law case studies and dispute resolution methods.</div></div>
+</div>
+<div class="mat-card-foot"><div class="mat-tags"><span class="mat-tag tut">Tutorial</span><span class="mat-tag">HRM</span><span class="mat-tag note" style="background:#e6ffe6;color:#1e5c3a">New</span></div><button class="btn-dl">▶ Watch</button></div>
+</div>
+</div>
+<div class="upload-zone" onclick="alert('Upload feature coming soon!')">
+<div class="up-icon"></div>
+<h3>Upload Tutorial Material</h3>
+<p>Upload tutorial sheets, worked examples, or recorded tutorial sessions.</p>
+<button class="btn-upload" onclick="event.stopPropagation();alert('Upload feature coming soon!')">Choose File to Upload</button>
+</div>
+</div>
+</div>
+</div>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/api.js"></script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home — Rajarata Kuppi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+<nav id="sidebar">
+<div class="sb-logo">
+<div class="logo-row">
+<div class="avatar">RK</div>
+<div>
+<div class="brand">Rajarata Kuppi</div>
+<div class="sub">FMS · RUSL, Mihintale</div>
+</div>
+</div>
+</div>
+<div class="sb-nav">
+<div class="nav-section">
+<div class="nav-label">Main</div>
+<a class="nav-item active" href="index.html">
+<span class="icon"></span> Home
+      </a>
+<a class="nav-item" href="student-material.html">
+<span class="icon"></span> Student Material
+      </a>
+<a class="nav-item" href="modules.html">
+<span class="icon"></span> Modules
+      </a>
+<a class="nav-item" href="notes.html">
+<span class="icon"></span> Notes
+      </a>
+<a class="nav-item" href="profile.html">
+<span class="icon"></span> Student Profile
+      </a>
+<a class="nav-item" href="pastpapers.html">
+<span class="icon"></span> Past Papers
+      </a>
+<a class="nav-item" href="notifications.html" id="nav-notif">
+<span class="icon"></span> Notifications
+        <span id="notif-dot" style="margin-left:auto;background:#e8a020;color:#0f1e3c;font-size:10px;font-weight:800;border-radius:20px;padding:1px 7px;">3</span>
+</a>
+</div>
+<div class="nav-section">
+<div class="nav-label">Tools</div>
+<a class="nav-item" href="gpa.html">
+<span class="icon"></span> GPA Calculator
+      </a>
+<a class="nav-item" href="forum.html">
+<span class="icon"></span> Forum
+      </a>
+<a class="nav-item" href="support.html">
+<span class="icon"></span> Support
+      </a>
+</div>
+</div>
+<div class="sb-footer">
+    Faculty of Management Studies<br/>
+    Rajarata University of Sri Lanka
+  </div>
+</nav>
+<div id="main">
+<div class="topbar">
+<div class="topbar-title" id="topbar-title">Home</div>
+<div class="topbar-right">
+<a href="login.html" class="topbar-badge topbar-action" id="topbar-login">Login</a>
+<a href="signup.html" class="topbar-badge topbar-action" id="topbar-signup">Sign Up</a>
+<div class="topbar-badge">FMS Student</div>
+<div class="topbar-profile" id="topbar-profile">
+<button class="topbar-avatar" id="topbar-avatar" type="button">ST</button>
+<div class="topbar-menu" id="topbar-menu">
+<a href="profile.html">Profile</a>
+<button type="button" onclick="logoutUser()">Log out</button>
+</div>
+</div>
+</div>
+</div>
+<div class="page active" id="page-home">
+<div class="page-header">
+<h1>Welcome to Rajarata Kuppi </h1>
+<p>Your official study companion for the Faculty of Management Studies, RUSL.</p>
+</div>
+<div class="stats-row">
+<div class="stat-card">
+<div class="val">4,600+</div>
+<div class="lbl">FMS Students</div>
+</div>
+<div class="stat-card">
+<div class="val">6</div>
+<div class="lbl">Departments</div>
+</div>
+<div class="stat-card">
+<div class="val">125+</div>
+<div class="lbl">Module Credits</div>
+</div>
+</div>
+<div class="sec-title">Latest Lecture Notes</div>
+<div class="notes-list">
+<div class="note-card">
+<div class="note-badge itm">ITM<br/><span style="font-size:8px;font-weight:500">PDF</span></div>
+<div class="note-body">
+<div class="note-title">ITM 3133  Enterprise Architecture</div>
+<div class="note-desc">SOA, EA frameworks, cloud computing, enterprise data models, IT control frameworks and emerging technologies. Year III Sem I.</div>
+<div class="note-meta"><span class="tag">3 Credits</span><span class="tag">312 downloads</span><span class="tag">Year III</span></div>
+</div>
+<button class="btn-dl"> Download</button>
+</div>
+<div class="note-card">
+<div class="note-badge acf">ACF<br/><span style="font-size:8px;font-weight:500">DOC</span></div>
+<div class="note-body">
+<div class="note-title">ACF 3113  Investment &amp; Portfolio Management</div>
+<div class="note-desc">Investment vehicles, portfolio theory, risk-return trade-off, asset pricing models and capital market efficiency. Year III Sem I.</div>
+<div class="note-meta"><span class="tag">3 Credits</span><span class="tag">267 downloads</span><span class="tag">Year III</span></div>
+</div>
+<button class="btn-dl"> Download</button>
+</div>
+<div class="note-card">
+<div class="note-badge hrm">HRM<br/><span style="font-size:8px;font-weight:500">PPT</span></div>
+<div class="note-body">
+<div class="note-title">HRM 3113  Employment Law &amp; Industrial Relations</div>
+<div class="note-desc">Sri Lanka labour law, types of employment, industrial disputes, trade union legislation, termination and social security laws.</div>
+<div class="note-meta"><span class="tag">3 Credits</span><span class="tag">198 downloads</span><span class="tag">Year III</span></div>
+</div>
+<button class="btn-dl">Download</button>
+</div>
+</div>
+<div class="sec-title">FMS Departments</div>
+<div class="dept-grid">
+<div class="dept-card"><div class="dc-icon"></div><div class="dc-name">Information Systems</div><div class="dc-code">ITM</div><div class="dc-info">BScHons (IS) · 125 Credits · 4 Years</div></div>
+<div class="dept-card"><div class="dc-icon"></div><div class="dc-name">Accountancy &amp; Finance</div><div class="dc-code">ACF</div><div class="dc-info">BScHons (A&amp;F) · 125 Credits · 4 Years</div></div>
+<div class="dept-card"><div class="dc-icon"></div><div class="dc-name">Business Management</div><div class="dc-code">MGT</div><div class="dc-info">BScHons (BM) · 124 Credits · 4 Years</div></div>
+<div class="dept-card"><div class="dc-icon"></div><div class="dc-name">Human Resource Mgmt.</div><div class="dc-code">HRM</div><div class="dc-info">BScHons (HRM) · 124 Credits · 4 Years</div></div>
+<div class="dept-card"><div class="dc-icon"></div><div class="dc-name">Marketing Management</div><div class="dc-code">MKT</div><div class="dc-info">BScHons (MM) · 122 Credits · 4 Years</div></div>
+<div class="dept-card"><div class="dc-icon"></div><div class="dc-name">Tourism &amp; Hospitality</div><div class="dc-code">THM</div><div class="dc-info">BScHons (THM) · 125 Credits · 4 Years</div></div>
+<div class="dept-card"><div class="dc-icon"></div><div class="dc-name">BBA External Degree</div><div class="dc-code">BBA</div><div class="dc-info">General Degree · 3 Years · Sinhala Medium</div></div>
+<div class="dept-card"><div class="dc-icon"></div><div class="dc-name">MBA Programme</div><div class="dc-code">MBA</div><div class="dc-info">Postgraduate · 2 Years · English · SLQF 10</div></div>
+</div>
+<div class="sec-title">Quick Revision Notes</div>
+<div class="notes-list">
+<div class="note-card"><div class="note-badge mgt">MGT</div><div class="note-body"><div class="note-title"> MGT 1113  Principles of Management</div><div class="note-desc">Planning, Organizing, Leading, Controlling (POLC) — evolution of management thought, organizational environment and decision-making quick reference.</div><div class="note-meta"><span class="tag">MGT</span><span class="tag">Year I · Sem I</span><span class="tag">3CR</span><span class="tag">2.4k views</span></div></div><button class="btn-dl">⬇ Download</button></div>
+<div class="note-card"><div class="note-badge acf">ACF</div><div class="note-body"><div class="note-title"> ACF 1133  Financial Accounting Summary</div><div class="note-desc">LKAS 16 (PPE), LKAS 37 (Provisions), SLFRS 15 (Revenue), branch accounting and consolidated financial statement revision sheet.</div><div class="note-meta"><span class="tag">ACF</span><span class="tag">Year I · Sem I</span><span class="tag">3CR</span><span class="tag">1.9k views</span></div></div><button class="btn-dl">⬇ Download</button></div>
+<div class="note-card"><div class="note-badge hrm">HRM</div><div class="note-body"><div class="note-title"> HRM 1243  Intro to Human Resource Management</div><div class="note-desc">HRM functions overview: job analysis, HR planning, employee resourcing, performance management, training, rewards and labour relations.</div><div class="note-meta"><span class="tag">HRM</span><span class="tag">Year I · Sem II</span><span class="tag">3CR</span><span class="tag">1.6k views</span></div></div><button class="btn-dl">⬇ Download</button></div>
+</div>
+<div class="sec-title">Recommended Study Videos</div>
+<div class="video-grid">
+<div class="video-card"><div class="video-thumb"><div class="play-btn">▶</div><div class="video-duration">22:14</div></div><div class="video-info"><div class="video-title">ITM 2123 — Database Management Systems</div><div class="video-meta">3.1k views · BIT Dept.</div></div></div>
+<div class="video-card"><div class="video-thumb" style="background:linear-gradient(135deg,#1e5c3a,#2d8a56)"><div class="play-btn">▶</div><div class="video-duration">18:40</div></div><div class="video-info"><div class="video-title">ACF 2224 — Financial Management Explained</div><div class="video-meta">2.7k views · ACF Dept.</div></div></div>
+<div class="video-card"><div class="video-thumb" style="background:linear-gradient(135deg,#6b1a3a,#a0335a)"><div class="play-btn">▶</div><div class="video-duration">26:05</div></div><div class="video-info"><div class="video-title">HRM 3113 — Industrial Relations Overview</div><div class="video-meta">2.0k views · HRM Dept.</div></div></div>
+<div class="video-card"><div class="video-thumb" style="background:linear-gradient(135deg,#3a2a6e,#5a48a0)"><div class="play-btn">▶</div><div class="video-duration">31:22</div></div><div class="video-info"><div class="video-title">MGT 3243 — Strategic Management Frameworks</div><div class="video-meta">1.8k views · MGT Dept.</div></div></div>
+</div>
+<div class="sec-title">Recently Added Resources</div>
+<div class="recent-list">
+<div class="recent-item"><div class="recent-dot"></div><div class="recent-body"><div class="recent-title">ITM 3253 — IS Security &amp; Risk Management Notes</div><div class="recent-meta">Information Systems · Year III · Sem II · 3 Credits · Added 1 hour ago</div></div><span class="new-badge">New</span></div>
+<div class="recent-item"><div class="recent-dot"></div><div class="recent-body"><div class="recent-title">ACF 4124 — Advanced Audit, Governance &amp; Risk Slides</div><div class="recent-meta">Accountancy &amp; Finance · Year IV · Sem I · 4 Credits · Added 3 hours ago</div></div><span class="new-badge">New</span></div>
+<div class="recent-item"><div class="recent-dot"></div><div class="recent-body"><div class="recent-title">HRM 3223 — Psychology &amp; Workplace Counselling Skills Video</div><div class="recent-meta">Human Resource Management · Year III · Sem II · 3 Credits · Added 5 hours ago</div></div><span class="new-badge">New</span></div>
+<div class="recent-item"><div class="recent-dot"></div><div class="recent-body"><div class="recent-title">MKT 2123 — Digital Marketing Quick Notes</div><div class="recent-meta">Marketing Management · Year II · Sem I · 3 Credits · Added 8 hours ago</div></div></div>
+<div class="recent-item"><div class="recent-dot"></div><div class="recent-body"><div class="recent-title">THM 31013 — IS &amp; E-Commerce for Tourism Notes</div><div class="recent-meta">Tourism &amp; Hospitality · Year III · Sem I · 3 Credits · Added today</div></div></div>
+</div>
+</div>
+</div>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/api.js"></script>
+</body>
+</html>

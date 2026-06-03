@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notes — Rajarata Kuppi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+<nav id="sidebar">
+<div class="sb-logo">
+<div class="logo-row">
+<div class="avatar">RK</div>
+<div>
+<div class="brand">Rajarata Kuppi</div>
+<div class="sub">FMS · RUSL, Mihintale</div>
+</div>
+</div>
+</div>
+<div class="sb-nav">
+<div class="nav-section">
+<div class="nav-label">Main</div>
+<a class="nav-item" href="index.html">
+<span class="icon"></span> Home
+      </a>
+<a class="nav-item" href="student-material.html">
+<span class="icon"></span> Student Material
+      </a>
+<a class="nav-item" href="modules.html">
+<span class="icon"></span> Modules
+      </a>
+<a class="nav-item active" href="notes.html">
+<span class="icon"></span> Notes
+      </a>
+<a class="nav-item" href="profile.html">
+<span class="icon"></span> Student Profile
+      </a>
+<a class="nav-item" href="pastpapers.html">
+<span class="icon"></span> Past Papers
+      </a>
+<a class="nav-item" href="notifications.html" id="nav-notif">
+<span class="icon"></span> Notifications
+        <span id="notif-dot" style="margin-left:auto;background:#e8a020;color:#0f1e3c;font-size:10px;font-weight:800;border-radius:20px;padding:1px 7px;">3</span>
+</a>
+</div>
+<div class="nav-section">
+<div class="nav-label">Tools</div>
+<a class="nav-item" href="gpa.html">
+<span class="icon"></span> GPA Calculator
+      </a>
+<a class="nav-item" href="forum.html">
+<span class="icon"></span> Forum
+      </a>
+<a class="nav-item" href="support.html">
+<span class="icon"></span> Support
+      </a>
+</div>
+</div>
+<div class="sb-footer">
+    Faculty of Management Studies<br/>
+    Rajarata University of Sri Lanka
+  </div>
+</nav>
+<div id="main">
+<div class="topbar">
+<div class="topbar-title" id="topbar-title">Notes</div>
+<div class="topbar-right">
+<a href="login.html" class="topbar-badge topbar-action" id="topbar-login">Login</a>
+<a href="signup.html" class="topbar-badge topbar-action" id="topbar-signup">Sign Up</a>
+<div class="topbar-badge">FMS Student</div>
+<div class="topbar-profile" id="topbar-profile">
+<button class="topbar-avatar" id="topbar-avatar" type="button">ST</button>
+<div class="topbar-menu" id="topbar-menu">
+<a href="profile.html">Profile</a>
+<button type="button" onclick="logoutUser()">Log out</button>
+</div>
+</div>
+</div>
+</div>
+<div class="page active" id="page-notes">
+<div class="page-header">
+<h1>Quick Revision Notes</h1>
+<p>Compact revision sheets for all FMS modules.</p>
+</div>
+<div class="notes-list">
+<div class="note-card"><div class="note-badge mgt">MGT</div><div class="note-body"><div class="note-title">MGT 1113 — Principles of Management</div><div class="note-desc">POLC framework — evolution of management thought, organizational environment and decision-making quick reference.</div><div class="note-meta"><span class="tag">MGT</span><span class="tag">Year I · Sem I</span><span class="tag">3CR</span><span class="tag">2.4k views</span></div></div><button class="btn-dl">⬇ Download</button></div>
+<div class="note-card"><div class="note-badge acf">ACF</div><div class="note-body"><div class="note-title"> ACF 1133 — Financial Accounting Summary</div><div class="note-desc">LKAS 16 (PPE), LKAS 37 (Provisions), SLFRS 15 (Revenue), branch accounting and consolidated financial statements.</div><div class="note-meta"><span class="tag">ACF</span><span class="tag">Year I · Sem I</span><span class="tag">3CR</span><span class="tag">1.9k views</span></div></div><button class="btn-dl">⬇ Download</button></div>
+<div class="note-card"><div class="note-badge hrm">HRM</div><div class="note-body"><div class="note-title"> HRM 1243 — Intro to Human Resource Management</div><div class="note-desc">HRM functions: job analysis, HR planning, employee resourcing, performance management, training, rewards and labour relations.</div><div class="note-meta"><span class="tag">HRM</span><span class="tag">Year I · Sem II</span><span class="tag">3CR</span><span class="tag">1.6k views</span></div></div><button class="btn-dl">⬇ Download</button></div>
+<div class="note-card"><div class="note-badge mgt">MGT</div><div class="note-body"><div class="note-title"> MGT 1143 — Business Mathematics Quick Sheet</div><div class="note-desc">Core formulae: progressions, matrices, linear equations, differentiation, integration essentials for FMS students.</div><div class="note-meta"><span class="tag">MGT</span><span class="tag">Year I · Sem I</span><span class="tag">3CR</span><span class="tag">1.4k views</span></div></div><button class="btn-dl">⬇ Download</button></div>
+<div class="note-card"><div class="note-badge mkt">MKT</div><div class="note-body"><div class="note-title"> MKT 1123 — Fundamentals of Marketing</div><div class="note-desc">Marketing mix (4Ps), market segmentation, consumer behaviour basics, product life cycle and positioning strategies.</div><div class="note-meta"><span class="tag">MKT</span><span class="tag">Year I · Sem I</span><span class="tag">3CR</span><span class="tag">1.2k views</span></div></div><button class="btn-dl">⬇ Download</button></div>
+<div class="note-card"><div class="note-badge thm">THM</div><div class="note-body"><div class="note-title"> THM 11023 — Intro to Tourism &amp; Hospitality Industry</div><div class="note-desc">Tourism types, hospitality sectors, Sri Lanka tourism overview, industry structure and career pathways revision notes.</div><div class="note-meta"><span class="tag">THM</span><span class="tag">Year I · Sem I</span><span class="tag">3CR</span><span class="tag">980 views</span></div></div><button class="btn-dl">⬇ Download</button></div>
+</div>
+</div>
+</div>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/api.js"></script>
+</body>
+</html>
