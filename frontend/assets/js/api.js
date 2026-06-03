@@ -43,6 +43,20 @@ function departmentSelectHtml(selected=''){
   return `<option value="">Select your department</option>${DEPARTMENT_OPTIONS.map(option => `<option value="${option.label}"${option.label === selectedLabel ? ' selected' : ''}>${option.label}</option>`).join('')}`;
 }
 
+function departmentChecklistHtml(selectedCodes = []){
+  const selected = new Set((selectedCodes || []).map(code => String(code || '').toUpperCase()));
+  return DEPARTMENT_OPTIONS.map(option => `
+    <label style="display:flex;align-items:center;gap:10px;padding:8px 10px;border:1px solid #e5ecf5;border-radius:10px;margin-bottom:8px;background:#fff">
+      <input type="checkbox" value="${option.code}" ${selected.has(option.code) ? 'checked' : ''} />
+      <span><strong>${option.code}</strong> ${option.label}</span>
+    </label>
+  `).join('');
+}
+
+function getSelectedDepartmentCodes(containerId){
+  return [...document.querySelectorAll(`#${containerId} input[type="checkbox"]:checked`)].map(input => input.value);
+}
+
 async function loginUser(email, password){
   const data = await api('/auth/login', { method:'POST', body: JSON.stringify({ email, password }) });
   localStorage.setItem('rk_token', data.access_token);
@@ -228,6 +242,17 @@ async function initModules(){
       if(deptGrid) deptGrid.style.display = '';
     }
     if(user && user.role === 'admin'){
+      const deptChecklist = document.getElementById('new-departments');
+      const deptCodeInput = document.getElementById('new-department-code');
+      const syncDepartmentChecklist = () => {
+        if(!deptChecklist) return;
+        deptChecklist.innerHTML = departmentChecklistHtml([deptCodeInput?.value.trim().toUpperCase()].filter(Boolean));
+      };
+      syncDepartmentChecklist();
+      if(deptCodeInput && !deptCodeInput.dataset.boundChecklist){
+        deptCodeInput.addEventListener('input', syncDepartmentChecklist);
+        deptCodeInput.dataset.boundChecklist = '1';
+      }
         // Manage students
         const manageBtn = document.getElementById('btn-manage-students');
         const manageModal = document.getElementById('manage-students-modal');
@@ -255,7 +280,11 @@ async function initModules(){
       if(createBtn) createBtn.addEventListener('click', async ()=>{
         createBtn.disabled = true;
         try{
-          const payload = { code: document.getElementById('new-code').value.trim(), title: document.getElementById('new-title').value.trim(), department_code: document.getElementById('new-department-code').value.trim(), year: document.getElementById('new-year').value.trim(), semester: document.getElementById('new-semester').value.trim(), credits: Number(document.getElementById('new-credits').value) || 0, description: document.getElementById('new-desc').value.trim() };
+          const departmentCode = document.getElementById('new-department-code').value.trim().toUpperCase();
+          const selectedDepartments = getSelectedDepartmentCodes('new-departments');
+          const departments = [...new Set([departmentCode, ...selectedDepartments.filter(Boolean)])].filter(Boolean);
+          if(!departments.length){ throw new Error('Select at least one eligible department'); }
+          const payload = { code: document.getElementById('new-code').value.trim(), title: document.getElementById('new-title').value.trim(), department_code: departmentCode, year: document.getElementById('new-year').value.trim(), semester: document.getElementById('new-semester').value.trim(), credits: Number(document.getElementById('new-credits').value) || 0, description: document.getElementById('new-desc').value.trim(), departments };
           await createModule(payload);
           showToast('Module created', 'success');
           if(modal) modal.style.display = 'none';

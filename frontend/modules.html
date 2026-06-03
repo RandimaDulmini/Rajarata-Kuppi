@@ -114,7 +114,12 @@
             <h3>Add Module</h3>
             <div class="form-group"><input id="new-code" placeholder="Module code (e.g. ITM2123)"></div>
             <div class="form-group"><input id="new-title" placeholder="Title"></div>
-            <div class="form-group"><input id="new-department-code" placeholder="Department code (e.g. ITM)"></div>
+            <div class="form-group"><select id="new-department-code"><option value="">Select primary department</option></select></div>
+            <div class="form-group">
+            <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:8px">Eligible departments</div>
+            <div id="new-departments" class="department-checklist"></div>
+            <div style="font-size:11px;color:var(--muted);margin-top:6px">Select every department that can enroll this module.</div>
+            </div>
             <div class="form-group"><input id="new-year" placeholder="Year (e.g. Year II)"></div>
             <div class="form-group"><input id="new-semester" placeholder="Semester (e.g. Semester I)"></div>
             <div class="form-group"><input id="new-credits" type="number" placeholder="Credits"></div>

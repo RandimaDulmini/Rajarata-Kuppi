@@ -16,6 +16,14 @@ def enroll(payload: dict, db: Session = Depends(get_db), user: models.User = Dep
         module = db.query(models.Module).filter(models.Module.code == payload['module_code']).first()
     if not module:
         raise HTTPException(status_code=404, detail="Module not found")
+    if user.role != 'admin':
+        user_department = (user.department_code or '').upper()
+        if not user_department:
+            raise HTTPException(status_code=403, detail="Your profile does not have a department assigned")
+        allowed_departments = {module.department_code.upper()}
+        allowed_departments.update((department.code or '').upper() for department in module.departments)
+        if user_department not in allowed_departments:
+            raise HTTPException(status_code=403, detail="This module is not available for your department")
     # prevent duplicate
     existing = db.query(models.Enrollment).filter(models.Enrollment.user_id == user.id, models.Enrollment.module_id == module.id).first()
     if existing:
